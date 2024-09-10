@@ -42,7 +42,7 @@ public class SootAnalyzer {
 	
 	public static void init() {
 		// System.out.println(System.getProperty("java.home"));
-		String parent = "C:\\Program Files\\Java\\jre1.8.0_421";
+		String parent = "C:\\Program Files\\Java\\jdk1.8.0_202\\jre";
 		lSootClasspath.add(new File(new File(parent, "lib"),
 				"jsse.jar").getPath());
 		lSootClasspath.add(new File(new File(parent, "lib"),
@@ -102,6 +102,12 @@ public class SootAnalyzer {
 				"-p","jb","use-original-names:true",
 				"-process-dir", directoryToAnalyze
 			};
+
+		System.out.println("myargs:");
+		for (String arg: myArgs) {
+			System.out.print(arg + " ");
+		}
+		System.out.println();
 
 		soot.Main.main(myArgs);
 	}
