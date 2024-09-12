@@ -1,0 +1,15 @@
+# ベースイメージとしてJava 8 (1.8.0_202) を使用
+FROM openjdk:8u202-jdk
+
+# 作業ディレクトリを設定
+WORKDIR /app
+
+# ソースコードとlibフォルダをコンテナにコピー
+COPY ./src /app/src
+COPY ./lib /app/lib
+
+# SootAnalyzer.javaをコンパイル
+RUN javac -cp /app/lib/soot-4.5.0-jar-with-dependencies.jar /app/src/sootAnalyzer/SootAnalyzer.java
+
+# エントリーポイントの設定
+ENTRYPOINT ["java", "-cp", "/app/lib/soot-4.5.0-jar-with-dependencies.jar:/app/src", "sootAnalyzer.SootAnalyzer"]
