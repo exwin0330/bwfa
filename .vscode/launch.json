@@ -6,6 +6,36 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MainClass",
+      "request": "launch",
+      "mainClass": "dfa.tutorial.flow.files.MainClass",
+      "projectName": "bwfa_af0b901e"
+    },
+    {
+      "type": "java",
+      "name": "Simple",
+      "request": "launch",
+      "mainClass": "dfa.tutorial.Simple",
+      "projectName": "bwfa_af0b901e"
+    },
+    {
+      "type": "java",
+      "name": "HelloSoot",
+      "request": "launch",
+      "mainClass": "dfa.tutorial.HelloSoot.HelloSoot",
+      "projectName": "bwfa_af0b901e"
+    },
+    {
+      "type": "java",
+      "name": "HelloSoot",
+      "request": "launch",
+      "mainClass": "dfa.tutorial.HelloSoot",
+      "cwd": "${workspaceFolder}",
+      "projectName": "bwfa_af0b901e",
+      "vmArgs": "-cp ${workspaceFolder}/bin;${workspaceFolder}/lib/soot-4.5.0-jar-with-dependencies.jar"
+    },
+    {
+      "type": "java",
       "name": "Example",
       "request": "launch",
       "mainClass": "sootAnalyzer.code.Example",

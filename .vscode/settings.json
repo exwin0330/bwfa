@@ -2,7 +2,8 @@
   "java.project.sourcePaths": ["src", "test"],
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "c:\\Users\\ereve\\Documents\\GitHub\\soot-4.5.0-jar-with-dependencies.jar"
+    "c:\\Users\\ereve\\Documents\\GitHub\\soot-4.5.0-jar-with-dependencies.jar",
+    "c:\\Users\\ereve\\Documents\\GitHub\\bwfa\\lib\\soot-4.5.0-jar-with-dependencies.jar",
+    "c:\\Users\\ereve\\Documents\\GitHub\\android-platforms/**/*.jar"
   ]
 }

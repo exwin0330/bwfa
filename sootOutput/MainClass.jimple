@@ -1,0 +1,52 @@
+public class MainClass extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        MainClass r0;
+
+        r0 := @this: MainClass;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.io.PrintStream $r0;
+        dfa.tutorial.flow.files.HelperClass $r2;
+        java.lang.String[] r3;
+        java.lang.String $r1;
+
+        r3 := @parameter0: java.lang.String[];
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        $r1 = staticinvoke <dfa.tutorial.flow.files.MainClass: java.lang.String message3()>();
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>($r1);
+
+        $r2 = new dfa.tutorial.flow.files.HelperClass;
+
+        specialinvoke $r2.<dfa.tutorial.flow.files.HelperClass: void <init>()>();
+
+        virtualinvoke $r2.<dfa.tutorial.flow.files.HelperClass: void printMessage()>();
+
+        return;
+    }
+
+    public static java.lang.String message3()
+    {
+        java.lang.String $r0;
+
+        $r0 = staticinvoke <dfa.tutorial.flow.files.MainClass: java.lang.String message2()>();
+
+        return $r0;
+    }
+
+    public static java.lang.String message2()
+    {
+        return "MainClass is starting.";
+    }
+}

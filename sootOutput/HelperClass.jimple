@@ -1,0 +1,28 @@
+public class HelperClass extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        HelperClass r0;
+
+        r0 := @this: HelperClass;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void printMessage()
+    {
+        java.io.PrintStream $r0;
+        HelperClass r1;
+
+        r1 := @this: HelperClass;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("Message from HelperClass.");
+
+        return;
+    }
+}

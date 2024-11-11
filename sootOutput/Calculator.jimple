@@ -1,0 +1,117 @@
+public class Calculator extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        Calculator r0;
+
+        r0 := @this: Calculator;
+
+        specialinvoke r0.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public int add(int, int)
+    {
+        Calculator r0;
+        int i0, i1, $i2;
+
+        r0 := @this: Calculator;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $i2 = i0 + i1;
+
+        return $i2;
+    }
+
+    public int subtract(int, int)
+    {
+        Calculator r0;
+        int i0, i1, $i2;
+
+        r0 := @this: Calculator;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $i2 = i0 - i1;
+
+        return $i2;
+    }
+
+    public int calculateSum(int, int)
+    {
+        Calculator r0;
+        int i0, i1, $i2;
+        dfa.tutorial.flow.files.Calculator $r1;
+
+        r0 := @this: Calculator;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $r1 = (dfa.tutorial.flow.files.Calculator) r0;
+
+        $i2 = virtualinvoke $r1.<dfa.tutorial.flow.files.Calculator: int add(int,int)>(i0, i1);
+
+        return $i2;
+    }
+
+    public int calculateDifference(int, int)
+    {
+        Calculator r0;
+        int i0, i1, $i2;
+        dfa.tutorial.flow.files.Calculator $r1;
+
+        r0 := @this: Calculator;
+
+        i0 := @parameter0: int;
+
+        i1 := @parameter1: int;
+
+        $r1 = (dfa.tutorial.flow.files.Calculator) r0;
+
+        $i2 = virtualinvoke $r1.<dfa.tutorial.flow.files.Calculator: int subtract(int,int)>(i0, i1);
+
+        return $i2;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.io.PrintStream $r1, $r3;
+        java.lang.String[] r5;
+        int i0, i1;
+        dfa.tutorial.flow.files.Calculator $r0;
+        java.lang.String $r2, $r4;
+
+        r5 := @parameter0: java.lang.String[];
+
+        $r0 = new dfa.tutorial.flow.files.Calculator;
+
+        specialinvoke $r0.<dfa.tutorial.flow.files.Calculator: void <init>()>();
+
+        i0 = virtualinvoke $r0.<dfa.tutorial.flow.files.Calculator: int calculateSum(int,int)>(10, 20);
+
+        i1 = virtualinvoke $r0.<dfa.tutorial.flow.files.Calculator: int calculateDifference(int,int)>(20, 10);
+
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+
+        $r2 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int)>(i0) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Sum: \u0001");
+
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>($r2);
+
+        $r3 = <java.lang.System: java.io.PrintStream out>;
+
+        $r4 = dynamicinvoke "makeConcatWithConstants" <java.lang.String (int)>(i1) <java.lang.invoke.StringConcatFactory: java.lang.invoke.CallSite makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object[])>("Difference: \u0001");
+
+        virtualinvoke $r3.<java.io.PrintStream: void println(java.lang.String)>($r4);
+
+        return;
+    }
+}

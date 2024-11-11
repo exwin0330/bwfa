@@ -20,21 +20,7 @@ package sootAnalyzer;
  */
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-
-import soot.Body;
-import soot.BodyTransformer;
-import soot.PackManager;
-import soot.Scene;
-import soot.SootMethod;
-import soot.Transform;
-import soot.Unit;
-import soot.jimple.Stmt;
-import soot.jimple.internal.JAssignStmt;
-import soot.jimple.internal.JIfStmt;
-import soot.options.Options;
 
 public class SootAnalyzer {
 
@@ -44,26 +30,16 @@ public class SootAnalyzer {
 	public static List<String> lSootClasspath = new ArrayList<String>();
 	
 	public static void init() {
-		Options.v().set_prepend_classpath(true);
-		Options.v().set_allow_phantom_refs(true);
-		Options.v().set_whole_program(true);
-		Options.v().set_output_format(Options.output_format_jimple);
-
-		// 必要なクラスパスの追加
-		Scene.v().setSootClassPath(String.join(File.pathSeparator, lSootClasspath));
-
-		// 解析対象のディレクトリを設定
-		Options.v().set_process_dir(Collections.singletonList(directoryToAnalyze));
-
 		// System.out.println(System.getProperty("java.home"));
+		System.setProperty("java.home", "C:\\Program Files\\Java\\jdk1.8.0_202\\jre");
 		String parent = "C:\\Program Files\\Java\\jdk1.8.0_202\\jre";
-		lSootClasspath.add(new File(new File(parent, "lib"),
-				"jsse.jar").getPath());
+//		lSootClasspath.add(new File(new File(parent, "lib"),
+//				"jsse.jar").getPath());
 		lSootClasspath.add(new File(new File(parent, "lib"),
 				"rt.jar").getPath());
-		lSootClasspath.add(new File(new File(parent, "lib"),
-				"jce.jar").getPath());
-		lSootClasspath.add(directoryToAnalyze);
+//		lSootClasspath.add(new File(new File(parent, "lib"),/
+//				"jce.jar").getPath());
+//		lSootClasspath.add(directoryToAnalyze);
 	}
 
 	public static void main(String[] args) {
@@ -76,7 +52,7 @@ public class SootAnalyzer {
 		}
 
 		System.out.println("Analyzing "+directoryToAnalyze);
-
+/*
 		PackManager.v().getPack("jtp").add(
 				new Transform("jtp.myTransform", new BodyTransformer() {
 
@@ -102,19 +78,20 @@ public class SootAnalyzer {
 
 
 				}));
-
+*/
 		String sootClasspath = "lib\\soot-4.5.0-jar-with-dependencies.jar";
-		for (String jar : lSootClasspath) { sootClasspath+=classpathDelimiter+jar;}    
+		for (String jar : lSootClasspath) { sootClasspath+=classpathDelimiter+jar;}
 
-		String[]  myArgs = 
+		String[]  myArgs =
 			{
 				"-cp", sootClasspath,
-				"-include-all",
-				"-allow-phantom-refs",
-				"-prepend-classpath", 
+//				"-include-all",
+//				"-allow-phantom-refs",
+//				"-prepend-classpath",
 				"-output-format", "J",
-				"-p","jb","use-original-names:true",
-				"-process-dir", directoryToAnalyze
+//				"-p","jb","use-original-names:true",
+				"-process-dir", directoryToAnalyze,
+    			"-debug"
 			};
 
 		System.out.println("myargs:");
